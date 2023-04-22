@@ -1,2 +1,80 @@
 @import './global.scss';
 
+body {
+    @include flex-column;
+    background-image: url(../img/bg-hero-desktop.svg);
+    background-color: var(--very-pale-cyan);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: top;
+
+    a {
+        @include button-style;
+        text-decoration: none;
+    }
+
+    $padding: 2rem 0.9rem;
+
+    header {
+        padding: $padding;
+        padding-top: 3rem;
+        width: 100%;
+        max-width: 90vw;
+        background-color: transparent;
+        @include flex(space-between);
+
+        img {
+            width: 11rem;
+        }
+    }
+
+    main {
+        max-width: 90vw;
+        @include flex-column;
+        padding: $padding;
+
+        #main-section {
+            @include flex(space-between);
+            gap: 3.2rem;
+            .main-text {
+                @include flex-column;
+                align-items: flex-start;
+                gap: 2rem;
+
+                h1 {
+                    font-size: 2.25rem;
+                }
+                p {
+                    font-size: 1rem;
+                }
+                a {
+                    margin-top: 0.5rem;
+                    @include button-style(var(--pink));
+                    color: var(--very-pale-cyan);
+                }
+            }
+            img {
+                max-width: 700px;
+            }
+        }
+
+        #features-section {
+
+        }
+
+        #relative-box-section {
+
+        }
+    }
+
+    footer {
+
+        .footer-wrapper {
+
+        }
+
+        .bottom-footer-wrapper {
+
+        }
+    }
+}
