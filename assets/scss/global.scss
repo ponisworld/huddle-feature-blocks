@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins:wght@600&display=swap');
+:root {
+    --pink: hsl(322, 100%, 66%);
+    --very-pale-cyan: hsl(193, 100%, 96%);
+    --very-dark-cyan: hsl(192, 100%, 9%);
+    --grayish-blue: hsl(208, 11%, 55%);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--very-dark-cyan);
+}
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+img {
+    max-width: 100%;
+}
+@mixin flex-column($justify: stretch) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: $justify;
+}
+@mixin flex($justify: stretch) {
+    display: flex;
+    align-items: center;
+    justify-content: $justify;
+}
+@mixin button-style($bg: #FFF) {
+    background-color: $bg;
+    color: var(--very-dark-cyan);
+    padding: 1rem 4rem;
+    border-radius: 30px;
+}
