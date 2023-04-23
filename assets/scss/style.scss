@@ -13,25 +13,33 @@ body {
         text-decoration: none;
     }
 
-    $padding: 2rem 0.9rem;
+    $padding: 2rem 5rem;
 
     header {
         padding: $padding;
         padding-top: 3rem;
         width: 100%;
-        max-width: 90vw;
         background-color: transparent;
         @include flex(space-between);
 
         img {
             width: 11rem;
         }
+        a:hover {
+            background-color: var(--pink);
+            color: var(--very-pale-cyan);
+        }
     }
 
     main {
-        max-width: 90vw;
         @include flex-column;
-        padding: $padding;
+        width: 100%;
+
+        section {
+            width: 100%;
+            padding: $padding
+        }
+        
 
         #main-section {
             @include flex(space-between);
@@ -39,10 +47,11 @@ body {
             .main-text {
                 @include flex-column;
                 align-items: flex-start;
-                gap: 2rem;
+                gap: 1.3rem;
 
                 h1 {
-                    font-size: 2.25rem;
+                    font-size: 2.2rem;
+                    margin-bottom: 0.2rem;
                 }
                 p {
                     font-size: 1rem;
@@ -51,6 +60,11 @@ body {
                     margin-top: 0.5rem;
                     @include button-style(var(--pink));
                     color: var(--very-pale-cyan);
+
+                    &:hover {
+                        color: var(--pink);
+                        background-color: var(--very-pale-cyan);
+                    }
                 }
             }
             img {
@@ -58,23 +72,134 @@ body {
             }
         }
 
-        #features-section {
+        .bg-white-wrapper {
+            width: 100%;
+            background-color: #fff;
 
-        }
+            #features-section {
+                width: inherit;
+                padding: 8rem 5rem 4rem 5rem;
+                @include flex-column;
+                gap: 3rem;
+    
+                .feature {
+                    width: inherit;
+                    @include flex(space-between);
+                    gap: 8rem;
+                    padding: 3rem 5rem;
+                    box-shadow: 0px 10px 35px 2px rgba(0,0,0,0.1);
+                    border-radius: 17px;
 
-        #relative-box-section {
+                    .main-text {
+                        @include flex-column;
+                        align-items: flex-start;
+                        gap: 1rem;
 
+                        h2 {
+                            font-size: 1.5rem;
+                        }
+                        p {
+                            color: var(--grayish-blue);
+                            font-size: 1rem;
+                        }
+                    }
+
+                    img {
+                        max-width: 450px;
+                    }
+                }
+            }
+    
+            #relative-box-section {
+                @include flex-column;
+                background-color: #fff;
+                gap: 2rem;
+                margin: 2rem auto;
+                width: fit-content;
+                box-shadow: 0px 10px 35px 2px rgba(0,0,0,0.1);
+                border-radius: 18px;
+                position: relative;
+                top: 6rem;
+
+                h1 {
+                    font-size: 1.75rem;
+                }
+
+                a {
+                    @include button-style(var(--pink));
+                    color: var(--very-pale-cyan);
+
+                    &:hover {
+                        background-color: var(--very-pale-cyan);
+                        color: var(--pink);
+                    }
+                }
+            }
         }
     }
 
     footer {
+        background-color: var(--very-dark-cyan);
+        width: 100%;
+        padding: 8rem 5rem 3rem 5rem;
+
+        a {
+            background-color: transparent;
+            padding: 0;
+            border-radius: 0;
+            box-shadow: none;
+            color: inherit;
+        }
+
+        p {
+            color: var(--very-pale-cyan);
+            font-size: 0.9rem;
+        }
 
         .footer-wrapper {
+            @include flex-column;
+            gap: 2rem;
+            align-items: flex-start;
+            width: 100%;
+            
+            .bottom-footer-wrapper {
+                width: 100%;
+                @include flex(space-between);
+                a {
+                    img {
+                        width: 1.5rem;
+                    }
+                }  
 
+                .company-information {
+                    max-width: 320px;
+                    @include flex-column;
+                    align-items: flex-start;
+                    gap: 1.5rem;
+                    .info {
+                        @include flex;
+                        gap: 1rem;
+
+                        &:first-of-type {
+                            align-items: flex-start;
+                            img {
+                                padding-top: 0.2rem;
+                            }
+                        }
+                    }
+                }
+
+                ul.links {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1rem 2rem;
+                    li {
+                        list-style-type: none;
+                        color: var(--very-pale-cyan);
+                    }
+                }
+            }
         }
 
-        .bottom-footer-wrapper {
-
-        }
     }
 }
